@@ -1,9 +1,8 @@
 import React from 'react';
-import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import { TiLocation, TiCalendar, TiPen } from 'react-icons/ti';
+import { TiCalendar, TiPen } from 'react-icons/ti';
 
 const CountdownDetail = ({ detail, editData, handleChange, toDate }) => {
 

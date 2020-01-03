@@ -9,21 +9,19 @@ import '../scss/style.scss';
 
 const userData = {
   title: '',
-  place: 'Saitama Super Arena, Tokyo',
-  date: '01 29 2020, 6:00 pm',
-  //date: '09 27 2019, 23:39 pm',
+  place: '',
+  date: '',
   text: '',
-}
+};
 
 const timeData = {
-  days: '',
-  hours: '',
-  minutes: '',
-  seconds: '',
-}
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+};
 
 const App = () => {
-
   const [data, setData] = useState(userData);
   const [toDate, setToDate] = useState('');
   const [leftDates, setLeftDates] = useState(timeData);
@@ -40,7 +38,7 @@ const App = () => {
       const minutes = moment.duration(then.diff(now)).get('minutes');
       const seconds = moment.duration(then.diff(now)).get('seconds');
 
-      if(countdown > 0) {
+      if (countdown > 0) {
         setLeftDates({
           days,
           hours,
@@ -49,7 +47,7 @@ const App = () => {
         })
       }
 
-    }, 1000)
+    }, 1000);
   }, [, leftDates, toDate]);
 
   const handleChange = (date) => {
@@ -69,7 +67,7 @@ const App = () => {
       </header>
       <main className="cd_wrap">
         <CountdownHeader title={data.title} />
-        <CountdownTimer days={leftDates.days} hours={leftDates.hours} minutes={leftDates.minutes} seconds={leftDates.seconds} />
+        <CountdownTimer leftDates={leftDates} days={leftDates.days} hours={leftDates.hours} minutes={leftDates.minutes} seconds={leftDates.seconds} />
         <CountdownDetail
           detail={data}
           editData={editData}

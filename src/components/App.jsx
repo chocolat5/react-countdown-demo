@@ -67,7 +67,12 @@ const App = () => {
       </header>
       <main className="cd_wrap">
         <CountdownHeader title={data.title} />
-        <CountdownTimer leftDates={leftDates} days={leftDates.days} hours={leftDates.hours} minutes={leftDates.minutes} seconds={leftDates.seconds} />
+        <CountdownTimer
+          leftDates={leftDates}
+          days={leftDates.days}
+          hours={leftDates.hours}
+          minutes={leftDates.minutes}
+          seconds={leftDates.seconds} />
         <CountdownDetail
           detail={data}
           editData={editData}
